@@ -120,9 +120,9 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ include "cert-manager-webhook-hetzner.fullname" . }}:flowcontrol-solver
+  name: {{ include "porkbun-webhook.fullname" . }}:flowcontrol-solver
 subjects:
   - apiGroup: ""
     kind: ServiceAccount
-    name: {{ include "cert-manager-webhook-hetzner.fullname" . }}
-    namespace: {{ .Release.Namespace | quote }}
+    name: {{ include "porkbun-webhook.fullname" . }}
+    namespace: {{ .Release.Namespace }}
