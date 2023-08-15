@@ -30,7 +30,7 @@ jobs:
           helm package deploy/*
           ls -alh
           pwd
-          git add index.yaml && git commit -m “update index” && git push origin master
+          git add 'index.yaml' && git commit -m “update index” && git push origin master
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
