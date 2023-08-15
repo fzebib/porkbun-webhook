@@ -26,11 +26,17 @@ jobs:
 
       - name: Index Re-up
         run: |
-          helm repo index --url https://fzebib.github.io/porkbun-webhook/ .
           helm package deploy/*
-          ls -alh
-          pwd
-          git add 'index.yaml' && git commit -m “update index” && git push origin master
+          helm repo index --url https://fzebib.github.io/porkbun-webhook/ .
+
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Firas
+          author_email: fzebib@gmail.com
+          message: 'index update'
+          add: 'index.yaml'
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
