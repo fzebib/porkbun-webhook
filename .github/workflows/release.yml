@@ -36,7 +36,7 @@ jobs:
           author_name: Firas
           author_email: fzebib@gmail.com
           message: 'index update'
-          add: 'index.yaml'
+          add: '.'
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
