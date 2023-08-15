@@ -1,4 +1,8 @@
-# See https://github.com/helm/chart-testing#configuration
-remote: origin
+apiVersion: v1
 chart-dirs:
   - deploy
+entries:
+  porkbun-webhook:
+  - apiVersion: v1
+    description: A Helm chart for Kubernetes
+    name: porkbun-webhook
