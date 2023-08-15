@@ -28,7 +28,9 @@ jobs:
         run: |
           helm repo index --url https://fzebib.github.io/porkbun-webhook/ .
           helm package deploy/*
-          cd porkbun-webhook/ && git add . && git commit -m “update helm chart” && git push origin master
+          ls -alh
+          pwd
+          git add . && git commit -m “update helm chart” && git push origin master
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
