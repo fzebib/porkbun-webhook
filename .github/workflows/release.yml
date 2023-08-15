@@ -24,6 +24,11 @@ jobs:
         with:
           version: v3.8.1
 
+
+      - name: Index Re-up
+        run: |
+          helm repo index --url https://fzebib.github.io/porkbun-webhook/ .
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.0
         env:
